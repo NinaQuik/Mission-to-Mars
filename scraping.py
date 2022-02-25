@@ -95,9 +95,11 @@ def mars_facts():
     #Assign columns and set index of dataFrame
     df.columns=['Description', 'Mars', 'Earth']
     df.set_index('Description', inplace=True)
+    #drop unnessary and redundant row
+    df = df.drop(df.index[0])
 
     #Convert dataFrame to HTML
-    return df.to_html()
+    return df.to_html(classes='table table-striped')
 
 def hemisphere_info(browser):
     #visit url
@@ -129,10 +131,14 @@ def hemisphere_info(browser):
     # Now get the full resolution image urls for each hemisphere
     try:
         for x in range(4):
+            #click on url to open up planet specific page
             browser.links.find_by_partial_text('Enhanced')[x].click()
+            #add the new page to beautiful soup
             planet_details = browser.html
             details_soup = soup(planet_details, 'html.parser')
+            #grab the url for the full size image
             full_url_rel = details_soup.find('a', text = 'Sample').get('href')
+            # add the url to the list of dictionaries
             hemisphere_image_urls[x]['img_url'] = f'https://marshemispheres.com/{full_url_rel}'
             browser.back()
     except AttributeError as e:
