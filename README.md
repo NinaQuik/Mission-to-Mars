@@ -1,7 +1,7 @@
 # Mission-to-Mars
 
 ## Overview
-The mission of this exercise was to automate a web browser using Splinter and BeautifulSoup to perform a scrape of data from four different websites that contain information about Mars.  MongoDB is used to store the data, and finally Flask to create a web application to display the data. The goal is to create a mobile responsive website with Bootstrap 3 components that contains Mars facts and images. 
+The mission of this exercise was to automate a web browser using Splinter and BeautifulSoup to perform a scrape of data from four different Mars related websites.  MongoDB is used to store the data, and finally Flask to create a web application to display the data. The goal is to create a mobile responsive website with Bootstrap 3 components that contains Mars facts and images. 
 
 ## Tools
 - Python 3.7.11
@@ -22,6 +22,6 @@ https://marshemispheres.com/
 
 ## Results
 
-Using Chrome Developer Tools, it is possible to see how the webpage would look for various devices. Below are examples for ipad and pixel 2 xl.
+Using Chrome Developer Tools, it is possible to see how the webpage would look for various devices. Below are examples for Ipad and Pixel 2 xl.
 
 |![IPAD](/Resources/IPAD.png) | ![Pixel](/Resources/Pixel.png)|
